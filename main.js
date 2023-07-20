@@ -47,3 +47,11 @@ console.log(`
                                  .:-===================-:.                                
                                         ............             
 `)
+
+function formRes() {
+  let formContent = document.querySelector(".form-content")
+  let submitRes = document.querySelector(".submit-res")
+
+  formContent.classList.add("hidden")
+  submitRes.classList.add("visible")
+}
