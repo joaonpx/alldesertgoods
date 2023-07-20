@@ -1,7 +1,77 @@
 body {
-  font-family: "Inconsolata", monospace;
   font-family: "Lato", sans-serif;
 
-  background-color: #050505;
-  color: #fafafa;
+  height: 100vh;
+
+  padding-block: 200px;
+}
+
+.form-group.hidden {
+  display: none;
+}
+
+.submit-res {
+  position: absolute;
+  top: 420px;
+  visibility: hidden;
+}
+
+.submit-res.visible {
+  visibility: visible;
+}
+
+.form-label,
+.form-btn {
+  font-family: "Inconsolata", monospace;
+}
+
+.form-btn {
+  transition: all 200ms;
+}
+
+.form-btn:hover {
+  transform: translateY(-5px);
+}
+
+.form-control,
+.form-control::placeholder,
+.form-control:focus {
+  color: #fff;
+}
+
+.form-control {
+  position: relative;
+  bottom: 40px;
+
+  border: none;
+  border-bottom: 2px solid hsla(0, 0%, 98%, 0.5);
+  border-radius: 0;
+  background: none;
+
+  text-align: center;
+
+  font-family: "Inconsolata", monospace;
+}
+
+.form-control:focus {
+  border: none;
+  border-bottom: 2px solid hsla(0, 0%, 98%, 0.5);
+
+  box-shadow: none;
+  background: none;
+}
+
+.form-control,
+.form-control::placeholder {
+  font-size: 2rem;
+  padding-top: 10px;
+  text-transform: uppercase;
+}
+
+.form-control::placeholder {
+  transition: all 200ms;
+}
+
+.form-control:focus::placeholder {
+  color: hsla(0, 0%, 98%, 0.5);
 }
