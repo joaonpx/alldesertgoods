@@ -1,3 +1,4 @@
+/*  --------------------- general --------------------- */
 body {
   font-family: "Lato", sans-serif;
 
@@ -6,23 +7,14 @@ body {
   padding-block: 200px;
 }
 
-.form-group.hidden {
-  display: none;
-}
-
-.submit-res {
-  position: absolute;
-  top: 420px;
-  visibility: hidden;
-}
-
-.submit-res.visible {
-  visibility: visible;
-}
-
 .form-label,
 .form-btn {
   font-family: "Inconsolata", monospace;
+}
+
+/*  --------------------- form --------------------- */
+.form-group.hidden {
+  display: none;
 }
 
 .form-btn {
@@ -61,6 +53,14 @@ body {
   background: none;
 }
 
+.form-control::placeholder {
+  transition: all 200ms;
+}
+
+.form-control:focus::placeholder {
+  color: hsla(0, 0%, 98%, 0.5);
+}
+
 .form-control,
 .form-control::placeholder {
   font-size: 2rem;
@@ -68,10 +68,13 @@ body {
   text-transform: uppercase;
 }
 
-.form-control::placeholder {
-  transition: all 200ms;
+/*  --------------------- form submit res --------------------- */
+.submit-res {
+  position: absolute;
+  top: 420px;
+  visibility: hidden;
 }
 
-.form-control:focus::placeholder {
-  color: hsla(0, 0%, 98%, 0.5);
+.submit-res.visible {
+  visibility: visible;
 }
