@@ -47,15 +47,3 @@ console.log(`
                                  .:-===================-:.                                
                                         ............             
 `)
-
-function formRes() {
-  let formContent = document.querySelector(".form-content")
-  let submitRes = document.querySelector(".submit-res")
-
-  formContent.classList.add("hidden")
-  submitRes.classList.add("visible")
-}
-
-let form = document.querySelector(".newsletter-email-form")
-
-form.addEventListener("submit", formRes)
