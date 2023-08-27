@@ -1,0 +1,22 @@
+@import "../base/variables.scss";
+
+button {
+  background: none;
+  border: none;
+  color: $text;
+
+  font-family: "Inconsolata", monospace;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition: all 200ms;
+
+  &:hover {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $first-collection;
+    color: $first-collection;
+  }
+}
