@@ -31,13 +31,6 @@
         }
       }
 
-      p {
-        font-family: "Inconsolata", monospace;
-
-        text-transform: lowercase;
-        line-height: 1.5;
-      }
-
       &::before {
         content: "ADD TO CART";
         position: absolute;
@@ -53,6 +46,13 @@
       &:hover::before {
         opacity: 1;
       }
+    }
+
+    p {
+      font-family: "Inconsolata", monospace;
+
+      text-transform: lowercase;
+      line-height: 1.5;
     }
   }
 }
