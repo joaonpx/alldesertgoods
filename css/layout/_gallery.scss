@@ -1,0 +1,60 @@
+@import "../base/functions.scss";
+
+.gallery {
+  @include flexCenter(center, column);
+  gap: 5rem;
+
+  .col-a,
+  .col-b {
+    @include flexCenter(center, row);
+    gap: 18rem;
+
+    flex-wrap: wrap;
+  }
+
+  .gallery-item {
+    .gallery-img {
+      &:hover::before {
+        content: "ADD TO CART";
+        position: absolute;
+        z-index: 99;
+        margin-left: 7.5rem;
+        margin-top: 11.5rem;
+      }
+    }
+
+    .gallery-img img {
+      width: min(50vw, 25rem);
+
+      @include grayFilter(0);
+
+      margin-bottom: 4rem;
+
+      cursor: pointer;
+
+      transition: all 200ms;
+      &:hover {
+        @include grayFilter(1rem);
+      }
+    }
+
+    p {
+      font-family: "Inconsolata", monospace;
+
+      text-transform: lowercase;
+      line-height: 1.5;
+    }
+  }
+}
+
+@media (max-width: 1186px) {
+  .gallery {
+    .col-a,
+    .col-b {
+      gap: 6rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+}

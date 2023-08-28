@@ -4,3 +4,7 @@
   justify-content: $justify-content;
   flex-direction: $flex-direction;
 }
+
+@mixin grayFilter($blur) {
+  filter: grayscale(100%) brightness(500%) blur($blur);
+}

@@ -25,6 +25,51 @@ button:hover {
   color: #e90c0c;
 }
 
+.gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5rem;
+}
+.gallery .col-a,
+.gallery .col-b {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 18rem;
+  flex-wrap: wrap;
+}
+.gallery .gallery-item .gallery-img:hover::before {
+  content: "ADD TO CART";
+  position: absolute;
+  z-index: 99;
+  margin-left: 7.5rem;
+  margin-top: 11.5rem;
+}
+.gallery .gallery-item .gallery-img img {
+  width: min(50vw, 25rem);
+  filter: grayscale(100%) brightness(500%) blur(0);
+  margin-bottom: 4rem;
+  cursor: pointer;
+  transition: all 200ms;
+}
+.gallery .gallery-item .gallery-img img:hover {
+  filter: grayscale(100%) brightness(500%) blur(1rem);
+}
+.gallery .gallery-item p {
+  font-family: "Inconsolata", monospace;
+  text-transform: lowercase;
+  line-height: 1.5;
+}
+
+@media (max-width: 1186px) {
+  .gallery .col-a,
+  .gallery .col-b {
+    gap: 6rem;
+  }
+}
 body {
   padding: 3rem;
   font-family: "Lato", sans-serif;
@@ -37,6 +82,17 @@ body header {
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
+}
+body header .cart:before {
+  content: attr(data-count);
+}
+body main {
+  margin-top: 12.3rem;
+  text-align: center;
+}
+body main > p {
+  text-transform: uppercase;
+  margin-bottom: 4rem;
 }
 
 @media (max-width: 768px) {
@@ -51,5 +107,8 @@ body header {
   }
   body header img {
     width: min(80%, 34.1rem);
+  }
+  body main {
+    margin-top: 6.15rem;
   }
 }/*# sourceMappingURL=main.css.map */

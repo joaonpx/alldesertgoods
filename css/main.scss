@@ -4,6 +4,8 @@
 
 @import "./components/buttons.scss";
 
+@import "./layout/gallery.scss";
+
 body {
   padding: 3rem;
 
@@ -15,6 +17,22 @@ body {
 
   header {
     @include flexCenter(space-between, row);
+
+    .cart:before {
+      content: attr(data-count);
+    }
+  }
+
+  main {
+    margin-top: 12.3rem;
+
+    text-align: center;
+
+    > p {
+      text-transform: uppercase;
+
+      margin-bottom: 4rem;
+    }
   }
 }
 
@@ -30,6 +48,10 @@ body {
       img {
         width: min(80%, 34.1rem);
       }
+    }
+
+    main {
+      margin-top: calc(12.3rem / 2);
     }
   }
 }
