@@ -1,3 +1,4 @@
+@import "../base/variables.scss";
 @import "../base/functions.scss";
 
 .gallery {
@@ -13,36 +14,67 @@
   }
 
   .gallery-item {
-    .gallery-img {
-      &:hover::before {
+    .gallery-img-container {
+      margin-bottom: 4rem;
+
+      .gallery-img {
+        width: min(50vw, 25rem);
+
+        @include grayFilter(0, 500%, 0);
+
+        cursor: pointer;
+
+        transition: all 400ms;
+
+        &:hover {
+          @include grayFilter(0, 500%, 0.5rem);
+        }
+      }
+
+      p {
+        font-family: "Inconsolata", monospace;
+
+        text-transform: lowercase;
+        line-height: 1.5;
+      }
+
+      &::before {
         content: "ADD TO CART";
         position: absolute;
         z-index: 99;
         margin-left: 7.5rem;
         margin-top: 11.5rem;
+
+        opacity: 0;
+
+        transition: opacity 600ms linear;
+      }
+
+      &:hover::before {
+        opacity: 1;
       }
     }
+  }
+}
 
-    .gallery-img img {
-      width: min(50vw, 25rem);
-
-      @include grayFilter(0);
-
-      margin-bottom: 4rem;
-
-      cursor: pointer;
-
-      transition: all 200ms;
-      &:hover {
-        @include grayFilter(1rem);
+.colorful {
+  main {
+    > p {
+      .collection-name {
+        color: $collection;
       }
     }
+  }
 
-    p {
-      font-family: "Inconsolata", monospace;
+  .gallery-item {
+    .gallery-img-container {
+      .gallery-img {
+        @include grayFilter(100%, 100%, 0);
 
-      text-transform: lowercase;
-      line-height: 1.5;
+        &:hover {
+          @include grayFilter(100%, 100%, 0.5rem);
+        }
+      }
     }
   }
 }
