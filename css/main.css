@@ -41,27 +41,44 @@ button:hover {
   gap: 18rem;
   flex-wrap: wrap;
 }
-.gallery .gallery-item .gallery-img:hover::before {
+.gallery .gallery-item .gallery-img-container {
+  margin-bottom: 4rem;
+}
+.gallery .gallery-item .gallery-img-container .gallery-img {
+  width: min(50vw, 25rem);
+  filter: saturate(0) brightness(500%) blur(0);
+  cursor: pointer;
+  transition: all 400ms;
+}
+.gallery .gallery-item .gallery-img-container .gallery-img:hover {
+  filter: saturate(0) brightness(500%) blur(0.5rem);
+}
+.gallery .gallery-item .gallery-img-container p {
+  font-family: "Inconsolata", monospace;
+  text-transform: lowercase;
+  line-height: 1.5;
+}
+.gallery .gallery-item .gallery-img-container::before {
   content: "ADD TO CART";
   position: absolute;
   z-index: 99;
   margin-left: 7.5rem;
   margin-top: 11.5rem;
+  opacity: 0;
+  transition: opacity 600ms linear;
 }
-.gallery .gallery-item .gallery-img img {
-  width: min(50vw, 25rem);
-  filter: grayscale(100%) brightness(500%) blur(0);
-  margin-bottom: 4rem;
-  cursor: pointer;
-  transition: all 200ms;
+.gallery .gallery-item .gallery-img-container:hover::before {
+  opacity: 1;
 }
-.gallery .gallery-item .gallery-img img:hover {
-  filter: grayscale(100%) brightness(500%) blur(1rem);
+
+.colorful main > p .collection-name {
+  color: #e90c0c;
 }
-.gallery .gallery-item p {
-  font-family: "Inconsolata", monospace;
-  text-transform: lowercase;
-  line-height: 1.5;
+.colorful .gallery-item .gallery-img-container .gallery-img {
+  filter: saturate(100%) brightness(100%) blur(0);
+}
+.colorful .gallery-item .gallery-img-container .gallery-img:hover {
+  filter: saturate(100%) brightness(100%) blur(0.5rem);
 }
 
 @media (max-width: 1186px) {
@@ -83,7 +100,7 @@ body header {
   justify-content: space-between;
   flex-direction: row;
 }
-body header .cart:before {
+body header .cart :before {
   content: attr(data-count);
 }
 body main {

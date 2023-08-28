@@ -18,8 +18,10 @@ body {
   header {
     @include flexCenter(space-between, row);
 
-    .cart:before {
-      content: attr(data-count);
+    .cart {
+      :before {
+        content: attr(data-count);
+      }
     }
   }
 
