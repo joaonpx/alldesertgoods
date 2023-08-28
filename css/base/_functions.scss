@@ -5,6 +5,6 @@
   flex-direction: $flex-direction;
 }
 
-@mixin grayFilter($blur) {
-  filter: grayscale(100%) brightness(500%) blur($blur);
+@mixin grayFilter($saturate, $brightness, $blur) {
+  filter: saturate($saturate) brightness($brightness) blur($blur);
 }
