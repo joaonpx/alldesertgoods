@@ -53,11 +53,6 @@ button:hover {
 .gallery .gallery-item .gallery-img-container .gallery-img:hover {
   filter: saturate(0) brightness(500%) blur(0.5rem);
 }
-.gallery .gallery-item .gallery-img-container p {
-  font-family: "Inconsolata", monospace;
-  text-transform: lowercase;
-  line-height: 1.5;
-}
 .gallery .gallery-item .gallery-img-container::before {
   content: "ADD TO CART";
   position: absolute;
@@ -69,6 +64,11 @@ button:hover {
 }
 .gallery .gallery-item .gallery-img-container:hover::before {
   opacity: 1;
+}
+.gallery .gallery-item p {
+  font-family: "Inconsolata", monospace;
+  text-transform: lowercase;
+  line-height: 1.5;
 }
 
 .colorful main > p .collection-name {
@@ -110,6 +110,9 @@ body main {
 body main > p {
   text-transform: uppercase;
   margin-bottom: 4rem;
+}
+body main > p .collection-name {
+  transition: all 400ms;
 }
 
 @media (max-width: 768px) {

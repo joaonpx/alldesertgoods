@@ -34,6 +34,10 @@ body {
       text-transform: uppercase;
 
       margin-bottom: 4rem;
+
+      .collection-name {
+        transition: all 400ms;
+      }
     }
   }
 }
