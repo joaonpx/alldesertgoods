@@ -1,7 +1,6 @@
 import { updateCart } from "./utils/cart.js"
 
 let addBtns = document.querySelectorAll(".gallery-img-container")
-let cartCount = document.querySelector(".count")
 
 if (!localStorage.count) {
   localStorage.count = 0
