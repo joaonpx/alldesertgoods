@@ -41,6 +41,12 @@ button:hover {
   gap: 18rem;
   flex-wrap: wrap;
 }
+.gallery .gallery-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 .gallery .gallery-item .gallery-img-container {
   margin-bottom: 4rem;
 }
@@ -54,7 +60,7 @@ button:hover {
   filter: saturate(0) brightness(500%) blur(0.5rem);
 }
 .gallery .gallery-item .gallery-img-container::before {
-  content: "ADD TO CART";
+  content: "ADD TO CART +";
   position: absolute;
   z-index: 99;
   margin-left: 7.5rem;
@@ -65,7 +71,7 @@ button:hover {
 .gallery .gallery-item .gallery-img-container:hover::before {
   opacity: 1;
 }
-.gallery .gallery-item p {
+.gallery .gallery-item span {
   font-family: "Inconsolata", monospace;
   text-transform: lowercase;
   line-height: 1.5;
