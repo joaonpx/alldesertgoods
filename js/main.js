@@ -1,6 +1,4 @@
-import { updateCart } from "./utils/cart.js"
-
-let addBtns = document.querySelectorAll(".gallery-img-container")
+import { updateCart, addItem } from "./utils/cart.js"
 
 if (!localStorage.count) {
   localStorage.count = 0
@@ -8,15 +6,7 @@ if (!localStorage.count) {
 
 updateCart()
 
-function addItem() {
-  if (localStorage.count) {
-    localStorage.count = Number(localStorage.count) + 1
-  } else {
-    localStorage.count = 0
-  }
-
-  updateCart()
-}
+let addBtns = document.querySelectorAll(".gallery-img-container")
 
 addBtns.forEach((btn) => {
   btn.addEventListener("click", addItem)
