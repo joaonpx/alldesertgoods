@@ -1,14 +1,16 @@
-function updateCart() {
-  let cartCount = document.querySelector(".count")
+if (!localStorage.cartCount) {
+  localStorage.cartCount = 0
+}
 
-  cartCount.setAttribute("data-count", localStorage.count)
+function updateCart() {
+  let count = document.querySelector(".count")
+
+  count.setAttribute("data-count", localStorage.cartCount)
 }
 
 function addItem() {
-  if (localStorage.count) {
-    localStorage.count = Number(localStorage.count) + 1
-  } else {
-    localStorage.count = 1
+  if (localStorage.cartCount) {
+    localStorage.cartCount = Number(localStorage.cartCount) + 1
   }
 
   updateCart()
