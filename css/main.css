@@ -47,6 +47,14 @@ button:hover {
   justify-content: center;
   flex-direction: column;
 }
+.gallery .gallery-item span {
+  font-family: "Inconsolata", monospace;
+  text-transform: lowercase;
+  line-height: 1.5;
+}
+.gallery .gallery-item #price::after {
+  content: attr(data-price);
+}
 .gallery .gallery-item .gallery-img-container {
   margin-bottom: 4rem;
 }
@@ -70,11 +78,6 @@ button:hover {
 }
 .gallery .gallery-item .gallery-img-container:hover::before {
   opacity: 1;
-}
-.gallery .gallery-item span {
-  font-family: "Inconsolata", monospace;
-  text-transform: lowercase;
-  line-height: 1.5;
 }
 
 .colorful main > p .collection-name {
@@ -106,7 +109,7 @@ body header {
   justify-content: space-between;
   flex-direction: row;
 }
-body header .cart :before {
+body header .cart .count:before {
   content: attr(data-count);
 }
 body main {

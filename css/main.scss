@@ -19,8 +19,10 @@ body {
     @include flexCenter(space-between, row);
 
     .cart {
-      :before {
-        content: attr(data-count);
+      .count {
+        &:before {
+          content: attr(data-count);
+        }
       }
     }
   }
