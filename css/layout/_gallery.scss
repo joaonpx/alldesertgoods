@@ -16,6 +16,19 @@
   .gallery-item {
     @include flexCenter(center, column);
 
+    span {
+      font-family: "Inconsolata", monospace;
+
+      text-transform: lowercase;
+      line-height: 1.5;
+    }
+
+    #price {
+      &::after {
+        content: attr(data-price);
+      }
+    }
+
     .gallery-img-container {
       margin-bottom: 4rem;
 
@@ -49,13 +62,6 @@
         opacity: 1;
       }
     }
-
-    span {
-      font-family: "Inconsolata", monospace;
-
-      text-transform: lowercase;
-      line-height: 1.5;
-    }
   }
 }
 
@@ -88,7 +94,4 @@
       gap: 6rem;
     }
   }
-}
-
-@media (max-width: 768px) {
 }
