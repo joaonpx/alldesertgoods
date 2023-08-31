@@ -9,9 +9,7 @@ function updateCart() {
 }
 
 function addItem() {
-  if (localStorage.cartCount) {
-    localStorage.cartCount = Number(localStorage.cartCount) + 1
-  }
+  localStorage.cartCount = Number(localStorage.cartCount) + 1
 
   updateCart()
 }
