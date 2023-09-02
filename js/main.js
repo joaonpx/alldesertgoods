@@ -2,7 +2,7 @@ import { updateCart, addItem } from "./utils/cart.js"
 
 updateCart()
 
-let addBtns = document.querySelectorAll(".gallery-img-container")
+let addBtns = document.querySelectorAll(".gallery-item")
 
 addBtns.forEach((btn) => {
   btn.addEventListener("click", addItem)
