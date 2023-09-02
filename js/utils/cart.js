@@ -1,7 +1,3 @@
-if (!localStorage.cartCount) {
-  localStorage.cartCount = 0
-}
-
 function updateCart() {
   let count = document.querySelector(".count")
 
@@ -9,7 +5,11 @@ function updateCart() {
 }
 
 function addItem() {
-  localStorage.cartCount = Number(localStorage.cartCount) + 1
+  if (localStorage.cartCount) {
+    localStorage.cartCount = Number(localStorage.cartCount) + 1
+  } else {
+    localStorage.cartCount = 1
+  }
 
   updateCart()
 }
