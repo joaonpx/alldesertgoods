@@ -17,8 +17,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - HTML e CSS
 - JavaScript
-- [Bootstrap](https://getbootstrap.com/)
+- [Sass](https://sass-lang.com/)
 
 ## 💻 Projeto
 
-Um formúlario para cadastro em newsletter. Feito para colocar em prática o uso do [Bootstrap](https://getbootstrap.com/)
+Uma galeria para venda de artes com carrinho de compras. Feito utilizando manipulação de DOM e Local Storage.
