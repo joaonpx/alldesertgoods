@@ -16,17 +16,25 @@
 
   background: #040404;
 
-  .close-btn {
-    cursor: pointer;
+  .offcanvas-content {
+    .close-btn {
+      cursor: pointer;
 
-    transition: stroke 200ms;
+      transition: stroke 200ms;
 
-    &:hover {
-      stroke: $collection;
+      &:hover {
+        stroke: $collection;
+      }
     }
   }
 
   &.active {
     visibility: visible;
+  }
+}
+
+@media (max-width: 768px) {
+  .offcanvas {
+    width: 100%;
   }
 }
