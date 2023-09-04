@@ -1,0 +1,32 @@
+@import "../base/variables.scss";
+@import "../base/functions.scss";
+
+.offcanvas {
+  visibility: hidden;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 99;
+
+  height: 100%;
+  width: min(50%, 40rem);
+
+  padding: 2rem;
+
+  background: #040404;
+
+  .close-btn {
+    cursor: pointer;
+
+    transition: stroke 200ms;
+
+    &:hover {
+      stroke: $collection;
+    }
+  }
+
+  &.active {
+    visibility: visible;
+  }
+}

@@ -58,8 +58,10 @@
         transition: opacity 600ms linear;
       }
 
-      &:hover::before {
-        opacity: 1;
+      &:hover {
+        &::before {
+          opacity: 1;
+        }
       }
     }
   }
