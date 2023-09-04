@@ -96,6 +96,28 @@ button:hover {
     gap: 6rem;
   }
 }
+.offcanvas {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 99;
+  height: 100%;
+  width: min(50%, 40rem);
+  padding: 2rem;
+  background: #040404;
+}
+.offcanvas .close-btn {
+  cursor: pointer;
+  transition: stroke 200ms;
+}
+.offcanvas .close-btn:hover {
+  stroke: #e90c0c;
+}
+.offcanvas.active {
+  visibility: visible;
+}
+
 body {
   padding: 3rem;
   font-family: "Lato", sans-serif;
