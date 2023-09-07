@@ -51,6 +51,7 @@ button:hover {
   font-family: "Inconsolata", monospace;
   text-transform: lowercase;
   line-height: 1.5;
+  cursor: pointer;
 }
 .gallery .gallery-item #price::after {
   content: attr(data-price);
