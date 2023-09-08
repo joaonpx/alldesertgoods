@@ -85,24 +85,39 @@
   <body>
     <div class="offcanvas">
       <div class="offcanvas-content">
-        <svg
-          class="close-btn"
-          xmlns="http://www.w3.org/2000/svg"
-          width="30"
-          height="30"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#fafafa"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="feather feather-x"
-        >
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
+        <div class="close-btn">
+          <svg
+            class="close-btn-img"
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#fafafa"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-x"
+          >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </div>
 
-        <p>SubTotal <span class="total-price" data-totalPrice="">$</span></p>
+        <p class="total-items">
+          <span class="cart-count" data-items-count=""> </span>
+          <span class="itemOrItems"></span>
+        </p>
+
+        <div class="cart-item-container"></div>
+
+        <div class="checkout">
+          <p class="subtotal">
+            SubTotal <span class="cart-price" data-cart-price="">$ </span>
+          </p>
+
+          <span class="checkout-btn">Checkout</span>
+        </div>
       </div>
     </div>
 
@@ -113,7 +128,7 @@
       <img src="./assets/logo.svg" alt="Logo" />
 
       <button class="cart open-btn">
-        Cart <span class="count" data-count=""></span>
+        Cart <span class="cart-count" data-cart-count=""></span>
       </button>
     </header>
 
