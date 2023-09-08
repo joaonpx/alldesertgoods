@@ -8,3 +8,9 @@
 @mixin grayFilter($saturate, $brightness, $blur) {
   filter: saturate($saturate) brightness($brightness) blur($blur);
 }
+
+@mixin setDataContentAfter($atribute) {
+  &::after {
+    content: attr($atribute);
+  }
+}
