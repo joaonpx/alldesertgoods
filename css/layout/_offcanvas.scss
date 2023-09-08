@@ -16,14 +16,103 @@
 
   background: #040404;
 
+  text-transform: uppercase;
+
   .offcanvas-content {
+    height: 98%;
+
     .close-btn {
+      .close-btn-img {
+        position: absolute;
+        cursor: pointer;
+
+        transition: stroke 200ms;
+        &:hover {
+          stroke: $collection;
+        }
+      }
+    }
+
+    .total-items {
+      text-align: center;
+    }
+
+    .cart-item-container {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+
+      .cart-item {
+        @include flexCenter(space-between, row);
+
+        font-family: "Inconsolata", monospace;
+
+        text-transform: lowercase;
+
+        .cart-hero {
+          @include flexCenter(center, row);
+
+          .remove-btn {
+            .remove-btn-img {
+              cursor: pointer;
+
+              transition: stroke 200ms;
+              &:hover {
+                stroke: $collection;
+              }
+            }
+          }
+
+          .cart-img {
+            width: 10rem;
+
+            margin-inline: 2rem;
+          }
+        }
+
+        #price {
+          &::after {
+            content: attr(data-price);
+          }
+        }
+
+        &:first-child {
+          margin-top: 4rem;
+        }
+      }
+    }
+
+    .subtotal {
+      @include flexCenter(space-between, row);
+
+      font-family: "Inconsolata", monospace;
+      text-transform: lowercase;
+
+      margin-top: 4rem;
+
+      .cart-price {
+        @include setDataContentAfter(data-cart-price);
+      }
+    }
+
+    .checkout-btn {
+      width: 100%;
+      height: 5rem;
+
+      @include flexCenter(center, row);
+
+      margin-top: 4rem;
+
       cursor: pointer;
 
-      transition: stroke 200ms;
+      transition: color 200ms, border-color 200ms;
+
+      border: 1px solid $text;
+      border-radius: 0.5rem;
 
       &:hover {
-        stroke: $collection;
+        color: $collection;
+        border-color: $collection;
       }
     }
   }
