@@ -1,4 +1,10 @@
-import { updateCart, openCart, closeCart, addItem } from "./utils/cart.js"
+import {
+  updateCart,
+  openCart,
+  closeCart,
+  addItem,
+  removeItem,
+} from "./utils/cart.js"
 
 updateCart()
 
@@ -7,9 +13,11 @@ let addBtns = document.querySelectorAll(".gallery-item")
 addBtns.forEach((btn) => {
   btn.addEventListener("click", (event) => {
     let item = event.currentTarget
+    let itemImg = item.querySelector(".gallery-img").src
+    let itemTitle = item.querySelector("#title").textContent
     let itemPrice = item.querySelector("#price").dataset.price
 
-    addItem(itemPrice)
+    addItem(itemImg, itemTitle, itemPrice)
   })
 })
 
