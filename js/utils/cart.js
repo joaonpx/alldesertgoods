@@ -5,6 +5,7 @@ if (!localStorage.cartCount) {
 if (!localStorage.cartPrice) {
   localStorage.cartPrice = 0
 }
+
 let cartItemContainer = document.querySelector(".cart-item-container")
 
 function openCart() {
@@ -25,9 +26,9 @@ function updateCart() {
   let itemOrItems = document.querySelector(".itemOrItems")
 
   if (localStorage.cartCount == "1") {
-    itemOrItems.innerText = "ITEM"
+    itemOrItems.innerHTML = "ITEM"
   } else {
-    itemOrItems.innerText = "ITEMS"
+    itemOrItems.innerHTML = "ITEMS"
   }
 
   document
@@ -89,16 +90,6 @@ function addItem(itemImg, itemTitle, itemPrice) {
   `
 
   cartItemContainer.appendChild(item)
-
-  let removeBtns = document.querySelectorAll(".remove-btn")
-
-  removeBtns.forEach((btn) => {
-    btn.addEventListener("click", (event) => {
-      let cartItem = event.currentTarget.parentNode.parentNode
-
-      removeItem(cartItem)
-    })
-  })
 }
 
 function removeItem(item) {
