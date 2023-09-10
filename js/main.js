@@ -1,10 +1,4 @@
-import {
-  updateCart,
-  openCart,
-  closeCart,
-  addItem,
-  removeItem,
-} from "./utils/cart.js"
+import { updateCart, openCart, closeCart, addItem } from "./utils/cart.js"
 
 updateCart()
 
