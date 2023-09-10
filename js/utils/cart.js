@@ -8,6 +8,10 @@ if (!localStorage.cartPrice) {
 
 let cartItems = []
 
+if (!localStorage.cart) {
+  localStorage.cart = JSON.stringify(cartItems)
+}
+
 let cartItemContainer = document.querySelector(".cart-item-container")
 
 function openCart() {
@@ -93,8 +97,11 @@ function removeItem(item) {
   //   item.innerHTML = itemContent
 
   //   if (item.querySelector("#price").dataset.price == itemPrice) {
-  //     console.log(item)
-  //     console.log(localStorage.cart)
+  //     let itemIndex = cartItems.indexOf(item.innerHTML)
+
+  //     cartItems.splice(itemIndex, 1)
+
+  //     localStorage.cart = JSON.stringify(cartItems)
   //   }
   // })
 
