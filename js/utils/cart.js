@@ -32,6 +32,26 @@ function openCart() {
       let item = event.currentTarget.parentNode.parentNode
 
       removeItem(item)
+
+      console.log(JSON.parse(localStorage.cart))
+
+      // JSON.parse(localStorage.cart).forEach((itemContent) => {
+      //   let item = document.createElement("div")
+      //   item.className = "cart-item"
+      //   item.innerHTML = itemContent
+
+      //   let itemTitle = item.querySelector("#title")
+
+      //   // let itemIndex = JSON.parse(localStorage.cart).findIndex(item)
+
+      //   // if (item.querySelector("#price").dataset.price == itemPrice) {
+      //   //   let itemIndex = cartItems.indexOf(item.innerHTML)
+
+      //   //   cartItems.splice(itemIndex, 1)
+
+      //   //   localStorage.cart = JSON.stringify(cartItems)
+      //   // }
+      // })
     })
   })
 }
@@ -90,20 +110,6 @@ function removeItem(item) {
   localStorage.cartPrice = Number(localStorage.cartPrice) - Number(itemPrice)
 
   localStorage.cartCount = Number(localStorage.cartCount) - 1
-
-  // JSON.parse(localStorage.cart).forEach((itemContent) => {
-  //   let item = document.createElement("div")
-  //   item.className = "cart-item"
-  //   item.innerHTML = itemContent
-
-  //   if (item.querySelector("#price").dataset.price == itemPrice) {
-  //     let itemIndex = cartItems.indexOf(item.innerHTML)
-
-  //     cartItems.splice(itemIndex, 1)
-
-  //     localStorage.cart = JSON.stringify(cartItems)
-  //   }
-  // })
 
   cartItemContainer.removeChild(item)
 
