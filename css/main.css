@@ -115,12 +115,12 @@ button:hover {
 .offcanvas .offcanvas-content {
   height: 98%;
 }
-.offcanvas .offcanvas-content .close-btn .close-btn-img {
+.offcanvas .offcanvas-content .close-button .close-button-img {
   position: absolute;
   cursor: pointer;
   transition: stroke 200ms;
 }
-.offcanvas .offcanvas-content .close-btn .close-btn-img:hover {
+.offcanvas .offcanvas-content .close-button .close-button-img:hover {
   stroke: #e90c0c;
 }
 .offcanvas .offcanvas-content .total-items {
@@ -145,11 +145,11 @@ button:hover {
   justify-content: center;
   flex-direction: row;
 }
-.offcanvas .offcanvas-content .cart-item-container .cart-item .cart-hero .remove-btn .remove-btn-img {
+.offcanvas .offcanvas-content .cart-item-container .cart-item .cart-hero .remove-button .remove-button-img {
   cursor: pointer;
   transition: stroke 200ms;
 }
-.offcanvas .offcanvas-content .cart-item-container .cart-item .cart-hero .remove-btn .remove-btn-img:hover {
+.offcanvas .offcanvas-content .cart-item-container .cart-item .cart-hero .remove-button .remove-button-img:hover {
   stroke: #e90c0c;
 }
 .offcanvas .offcanvas-content .cart-item-container .cart-item .cart-hero .cart-img {
@@ -174,7 +174,7 @@ button:hover {
 .offcanvas .offcanvas-content .subtotal .cart-price::after {
   content: attr(data-cart-price);
 }
-.offcanvas .offcanvas-content .checkout-btn {
+.offcanvas .offcanvas-content .checkout-button {
   width: 100%;
   height: 5rem;
   display: flex;
@@ -187,7 +187,7 @@ button:hover {
   border: 1px solid #fafafa;
   border-radius: 0.5rem;
 }
-.offcanvas .offcanvas-content .checkout-btn:hover {
+.offcanvas .offcanvas-content .checkout-button:hover {
   color: #e90c0c;
   border-color: #e90c0c;
 }

@@ -2,10 +2,10 @@ import { updateCart, openCart, closeCart, addItem } from "./utils/cart.js"
 
 updateCart()
 
-let addBtns = document.querySelectorAll(".gallery-item")
+let addButtons = document.querySelectorAll(".gallery-item")
 
-addBtns.forEach((btn) => {
-  btn.addEventListener("click", (event) => {
+addButtons.forEach((button) => {
+  button.addEventListener("click", (event) => {
     let item = event.currentTarget
     let itemImg = item.querySelector(".gallery-img").src
     let itemTitle = item.querySelector("#title").textContent
@@ -15,16 +15,16 @@ addBtns.forEach((btn) => {
   })
 })
 
-let openBtn = document.querySelector(".open-btn")
+let openButton = document.querySelector(".open-button")
 
-openBtn.addEventListener("click", openCart)
+openButton.addEventListener("click", openCart)
 
-let closeBtn = document.querySelector(".close-btn")
+let closeButton = document.querySelector(".close-button")
 
-closeBtn.addEventListener("click", closeCart)
+closeButton.addEventListener("click", closeCart)
 
-let colorfulBtn = document.querySelector(".colorful")
+let colorfulButton = document.querySelector(".colorful")
 
-colorfulBtn.addEventListener("click", () => {
+colorfulButton.addEventListener("click", () => {
   document.body.classList.add("colorful")
 })

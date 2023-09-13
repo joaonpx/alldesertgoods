@@ -21,8 +21,8 @@
   .offcanvas-content {
     height: 98%;
 
-    .close-btn {
-      .close-btn-img {
+    .close-button {
+      .close-button-img {
         position: absolute;
         cursor: pointer;
 
@@ -52,8 +52,8 @@
         .cart-hero {
           @include flexCenter(center, row);
 
-          .remove-btn {
-            .remove-btn-img {
+          .remove-button {
+            .remove-button-img {
               cursor: pointer;
 
               transition: stroke 200ms;
@@ -95,7 +95,7 @@
       }
     }
 
-    .checkout-btn {
+    .checkout-button {
       width: 100%;
       height: 5rem;
 
