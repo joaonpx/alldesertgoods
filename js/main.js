@@ -1,10 +1,8 @@
-import { updateCart, openCart, closeCart, addItem } from "./utils/cart.js"
+import { openCart, closeCart, addItem } from "./utils/cart.js"
 
 import { galleryItems } from "./utils/galleryItems.js"
 
 import { createGalleryElement } from "./utils/createElement.js"
-
-updateCart()
 
 galleryItems.forEach((item) => {
   let galleryColumnA = document.querySelector(".col-a")
