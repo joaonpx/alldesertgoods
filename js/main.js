@@ -1,21 +1,24 @@
 import { updateCart, openCart, closeCart, addItem } from "./utils/cart.js"
 
-import { items } from "./utils/galleryItems.js"
+import { galleryItems } from "./utils/galleryItems.js"
+
+import { createGalleryElement } from "./utils/createElement.js"
 
 updateCart()
 
-items.forEach((item) => {
+galleryItems.forEach((item) => {
   let galleryColumnA = document.querySelector(".col-a")
   let galleryColumnB = document.querySelector(".col-b")
 
-  let itemElement = document.createElement("div")
-  itemElement.className = "gallery-item"
-  itemElement.innerHTML = `<div class="gallery-img-container"><img class="gallery-img" src="${item.img}" alt="Gallery Item 1"/></div><span id="title">${item.name}</span><span id="price" data-price="${item.price}">$ </span>`
+  let galleryItemElement = createGalleryElement(item.img, item.name, item.price)
 
-  if (items.indexOf(item) <= 2) {
-    galleryColumnA.appendChild(itemElement)
-  } else if (items.indexOf(item) > 2 && items.indexOf(item) <= 6) {
-    galleryColumnB.appendChild(itemElement)
+  if (galleryItems.indexOf(item) <= 2) {
+    galleryColumnA.appendChild(galleryItemElement)
+  } else if (
+    galleryItems.indexOf(item) > 2 &&
+    galleryItems.indexOf(item) <= 6
+  ) {
+    galleryColumnB.appendChild(galleryItemElement)
   }
 })
 
