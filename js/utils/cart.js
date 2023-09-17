@@ -1,3 +1,5 @@
+import { createCartElement } from "./createElement.js"
+
 if (!localStorage.cartCount) {
   localStorage.cartCount = 0
 }
@@ -6,52 +8,42 @@ if (!localStorage.cartPrice) {
   localStorage.cartPrice = 0
 }
 
+const cartItemContainer = document.querySelector(".cart-item-container")
+
 let cartItems = []
 
 if (!localStorage.cart) {
   localStorage.cart = JSON.stringify(cartItems)
-}
+} else {
+  cartItems = JSON.parse(localStorage.cart)
 
-let cartItemContainer = document.querySelector(".cart-item-container")
+  JSON.parse(localStorage.cart).forEach((item) => {
+    const cartItemElement = createCartElement(
+      item.img,
+      item.name,
+      item.price,
+      item.id
+    )
+
+    updateCartItems(cartItemElement)
+  })
+}
 
 function openCart() {
   document.querySelector(".offcanvas").classList.add("active")
 
-  JSON.parse(localStorage.cart).forEach((itemContent) => {
-    let item = document.createElement("div")
-    item.className = "cart-item"
-    item.innerHTML = itemContent
-
-    cartItemContainer.appendChild(item)
-  })
-
-  let removeButtons = document.querySelectorAll(".remove-button")
+  const removeButtons = document.querySelectorAll(".remove-button")
 
   removeButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
-      let item = event.currentTarget.parentNode.parentNode
+      const itemElement = event.currentTarget.parentNode.parentNode
+      const itemId = itemElement.id
 
-      removeItem(item)
-
-      console.log(JSON.parse(localStorage.cart))
-
-      // JSON.parse(localStorage.cart).forEach((itemContent) => {
-      //   let item = document.createElement("div")
-      //   item.className = "cart-item"
-      //   item.innerHTML = itemContent
-
-      //   let itemTitle = item.querySelector("#title")
-
-      //   // let itemIndex = JSON.parse(localStorage.cart).findIndex(item)
-
-      //   // if (item.querySelector("#price").dataset.price == itemPrice) {
-      //   //   let itemIndex = cartItems.indexOf(item.innerHTML)
-
-      //   //   cartItems.splice(itemIndex, 1)
-
-      //   //   localStorage.cart = JSON.stringify(cartItems)
-      //   // }
-      // })
+      JSON.parse(localStorage.cart).forEach((item, index) => {
+        if (item.id == itemId) {
+          removeItem(itemElement, index)
+        }
+      })
     })
   })
 }
@@ -61,13 +53,13 @@ function closeCart() {
 }
 
 function updateCart() {
-  let cartCounts = document.querySelectorAll(".cart-count")
+  const cartCounts = document.querySelectorAll(".cart-count")
 
   cartCounts.forEach((cartCount) => {
     cartCount.setAttribute("data-cart-count", localStorage.cartCount)
   })
 
-  let itemOrItems = document.querySelector(".itemOrItems")
+  const itemOrItems = document.querySelector(".itemOrItems")
 
   if (localStorage.cartCount == "1") {
     itemOrItems.innerHTML = "ITEM"
@@ -88,12 +80,27 @@ function updateCartPrice(price) {
   localStorage.cartPrice = Number(localStorage.cartPrice) + Number(price)
 }
 
-function addItem(itemImg, itemTitle, itemPrice) {
-  let item = document.createElement("div")
-  item.className = "cart-item"
-  item.innerHTML = `<div class="cart-hero"><div class="remove-button"><svg class="remove-button-img" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fafafa" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></div><div class="cart-img-container"><img class="cart-img" src="${itemImg}" alt="Cart Item"/></div><span id="title">${itemTitle}</span></div><span id="price" data-price="${itemPrice}">$ </span>`
+function updateCartItems(itemElement) {
+  cartItemContainer.appendChild(itemElement)
+}
 
-  cartItems.push(item.innerHTML)
+function addItem(itemImg, itemTitle, itemPrice) {
+  let id = 0
+
+  cartItems.forEach(() => {
+    id++
+  })
+
+  let cartItemElement = createCartElement(itemImg, itemTitle, itemPrice, id)
+
+  let cartItem = {
+    name: itemTitle,
+    img: itemImg,
+    price: itemPrice,
+    id: id,
+  }
+
+  cartItems.push(cartItem)
 
   localStorage.cart = JSON.stringify(cartItems)
 
@@ -102,9 +109,11 @@ function addItem(itemImg, itemTitle, itemPrice) {
   updateCartCount()
 
   updateCart()
+
+  updateCartItems(cartItemElement)
 }
 
-function removeItem(item) {
+function removeItem(item, itemIndex) {
   let itemPrice = item.querySelector("#price").dataset.price
 
   localStorage.cartPrice = Number(localStorage.cartPrice) - Number(itemPrice)
@@ -112,6 +121,12 @@ function removeItem(item) {
   localStorage.cartCount = Number(localStorage.cartCount) - 1
 
   cartItemContainer.removeChild(item)
+
+  JSON.parse(localStorage.cart).forEach((item, index) => {
+    if (index === itemIndex) {
+      console.log(`remove index: ${index}`)
+    }
+  })
 
   updateCart()
 }
