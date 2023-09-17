@@ -21,9 +21,8 @@ body {
   }
 
   main {
+    @include flexCenter(center, column);
     margin-top: 12.3rem;
-
-    text-align: center;
 
     > p {
       text-transform: uppercase;

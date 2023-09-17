@@ -214,8 +214,11 @@ body header {
   flex-direction: row;
 }
 body main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   margin-top: 12.3rem;
-  text-align: center;
 }
 body main > p {
   text-transform: uppercase;
