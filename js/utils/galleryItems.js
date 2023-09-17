@@ -1,4 +1,4 @@
-const items = [
+const galleryItems = [
   {
     name: "UWD Project #1",
     img: "./assets/art-gallery/uwd-1.png",
@@ -36,4 +36,4 @@ const items = [
   },
 ]
 
-export { items }
+export { galleryItems }
