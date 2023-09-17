@@ -9,6 +9,7 @@ if (!localStorage.cartPrice) {
 }
 
 const cartItemContainer = document.querySelector(".cart-item-container")
+const cartEmptyElement = document.querySelector(".cart-empty")
 
 let cartItems = []
 
@@ -31,21 +32,6 @@ if (!localStorage.cart) {
 
 function openCart() {
   document.querySelector(".offcanvas").classList.add("active")
-
-  const removeButtons = document.querySelectorAll(".remove-button")
-
-  removeButtons.forEach((button) => {
-    button.addEventListener("click", (event) => {
-      const itemElement = event.currentTarget.parentNode.parentNode
-      const itemId = itemElement.id
-
-      JSON.parse(localStorage.cart).forEach((item, index) => {
-        if (item.id == itemId) {
-          removeItem(itemElement, index)
-        }
-      })
-    })
-  })
 }
 
 function closeCart() {
@@ -70,6 +56,13 @@ function updateCart() {
   document
     .querySelector(".cart-price")
     .setAttribute("data-cart-price", localStorage.cartPrice)
+
+  if (JSON.parse(localStorage.cart).length) {
+    cartEmptyElement.classList.add("not-visible")
+    document.querySelector(".checkout").classList.add("active")
+  } else {
+    cartEmptyElement.classList.remove("not-visible")
+  }
 }
 
 function updateCartCount() {
@@ -81,7 +74,7 @@ function updateCartPrice(price) {
 }
 
 function updateCartItems(itemElement) {
-  cartItemContainer.appendChild(itemElement)
+  cartItemContainer.insertBefore(itemElement, cartEmptyElement)
 }
 
 function addItem(itemImg, itemTitle, itemPrice) {
@@ -100,6 +93,19 @@ function addItem(itemImg, itemTitle, itemPrice) {
     id: id,
   }
 
+  cartItemElement
+    .querySelector(".remove-button")
+    .addEventListener("click", (event) => {
+      const itemElement = event.currentTarget.parentNode.parentNode
+      const itemId = itemElement.id
+
+      JSON.parse(localStorage.cart).forEach((item, index) => {
+        if (item.id == itemId) {
+          removeItem(itemElement, index)
+        }
+      })
+    })
+
   cartItems.push(cartItem)
 
   localStorage.cart = JSON.stringify(cartItems)
@@ -108,9 +114,9 @@ function addItem(itemImg, itemTitle, itemPrice) {
 
   updateCartCount()
 
-  updateCart()
-
   updateCartItems(cartItemElement)
+
+  updateCart()
 }
 
 function removeItem(item, itemIndex) {
@@ -122,13 +128,15 @@ function removeItem(item, itemIndex) {
 
   cartItemContainer.removeChild(item)
 
+  updateCart()
+
   JSON.parse(localStorage.cart).forEach((item, index) => {
     if (index === itemIndex) {
-      console.log(`remove index: ${index}`)
+      JSON.parse(localStorage.cart).slice(0, index)
     }
   })
-
-  updateCart()
 }
 
-export { updateCart, openCart, closeCart, addItem }
+updateCart()
+
+export { openCart, closeCart, addItem }
