@@ -101,6 +101,7 @@ button:hover {
   }
 }
 .offcanvas {
+  overflow-y: scroll;
   visibility: hidden;
   position: fixed;
   top: 0;
@@ -111,6 +112,9 @@ button:hover {
   padding: 2rem;
   background: #040404;
   text-transform: uppercase;
+}
+.offcanvas::-webkit-scrollbar {
+  display: none;
 }
 .offcanvas .offcanvas-content {
   height: 98%;
@@ -146,6 +150,7 @@ button:hover {
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
+  flex-wrap: wrap;
   font-family: "Inconsolata", monospace;
   text-transform: lowercase;
 }
