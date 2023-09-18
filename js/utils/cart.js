@@ -45,6 +45,7 @@ function updateCart() {
     document.querySelector(".checkout").classList.add("active")
   } else {
     cartEmptyElement.classList.remove("not-visible")
+    document.querySelector(".checkout").classList.remove("active")
   }
 }
 
