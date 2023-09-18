@@ -13,23 +13,6 @@ const cartEmptyElement = document.querySelector(".cart-empty")
 
 let cartItems = []
 
-if (!localStorage.cart) {
-  localStorage.cart = JSON.stringify(cartItems)
-} else {
-  cartItems = JSON.parse(localStorage.cart)
-
-  JSON.parse(localStorage.cart).forEach((item) => {
-    const cartItemElement = createCartElement(
-      item.img,
-      item.name,
-      item.price,
-      item.id
-    )
-
-    updateCartItems(cartItemElement)
-  })
-}
-
 function openCart() {
   document.querySelector(".offcanvas").classList.add("active")
 }
@@ -128,12 +111,38 @@ function removeItem(item, itemIndex) {
 
   cartItemContainer.removeChild(item)
 
-  updateCart()
+  // JSON.parse(localStorage.cart).slice(itemIndex)
 
-  JSON.parse(localStorage.cart).forEach((item, index) => {
-    if (index === itemIndex) {
-      JSON.parse(localStorage.cart).slice(0, index)
-    }
+  updateCart()
+}
+
+if (!localStorage.cart) {
+  localStorage.cart = JSON.stringify(cartItems)
+} else {
+  cartItems = JSON.parse(localStorage.cart)
+
+  JSON.parse(localStorage.cart).forEach((item) => {
+    const cartItemElement = createCartElement(
+      item.img,
+      item.name,
+      item.price,
+      item.id
+    )
+
+    updateCartItems(cartItemElement)
+  })
+
+  cartItemContainer.querySelectorAll(".remove-button").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const itemElement = event.currentTarget.parentNode.parentNode
+      const itemId = itemElement.id
+
+      JSON.parse(localStorage.cart).forEach((item, index) => {
+        if (item.id == itemId) {
+          removeItem(itemElement, index)
+        }
+      })
+    })
   })
 }
 
