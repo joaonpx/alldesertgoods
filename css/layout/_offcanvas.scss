@@ -2,6 +2,7 @@
 @import "../base/functions.scss";
 
 .offcanvas {
+  overflow-y: scroll;
   visibility: hidden;
 
   position: fixed;
@@ -17,6 +18,10 @@
   background: #040404;
 
   text-transform: uppercase;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   .offcanvas-content {
     height: 98%;
@@ -54,6 +59,7 @@
 
       .cart-item {
         @include flexCenter(space-between, row);
+        flex-wrap: wrap;
 
         font-family: "Inconsolata", monospace;
 
