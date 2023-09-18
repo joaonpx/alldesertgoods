@@ -111,7 +111,9 @@ function removeItem(item, itemIndex) {
 
   cartItemContainer.removeChild(item)
 
-  // JSON.parse(localStorage.cart).slice(itemIndex)
+  cartItems.splice(itemIndex, 1)
+
+  localStorage.cart = JSON.stringify(cartItems)
 
   updateCart()
 }
