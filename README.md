@@ -7,9 +7,9 @@
 
 <br>
 
-<!-- <p align="center">
-  <img alt="preview" src=".github/preview.png" width="100%">
-</p> -->
+<p align="center">
+  <img alt="preview" src="https://i.imgur.com/SC8oAha.png" width="100%">
+</p>
 
 ## 🚀 Tecnologias
 
