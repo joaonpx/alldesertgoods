@@ -11,6 +11,10 @@
   <img alt="preview" src="https://i.imgur.com/SC8oAha.png" width="100%">
 </p>
 
+## 💻 Projeto
+
+Uma galeria para venda de artes com carrinho de compras. Feito utilizando manipulação de DOM e Local Storage.
+
 ## 🚀 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
@@ -18,10 +22,6 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - HTML e CSS
 - JavaScript
 - [Sass](https://sass-lang.com/)
-
-## 💻 Projeto
-
-Uma galeria para venda de artes com carrinho de compras. Feito utilizando manipulação de DOM e Local Storage.
 
 ## 🎨 Demo
 

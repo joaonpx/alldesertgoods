@@ -53,8 +53,8 @@ button:hover {
   line-height: 1.5;
   cursor: pointer;
   -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 .gallery .gallery-item #price::after {
   content: attr(data-price);
@@ -160,14 +160,31 @@ button:hover {
   justify-content: center;
   flex-direction: row;
 }
-.offcanvas .offcanvas-content .cart-item-container .cart-item .cart-hero .remove-button .remove-button-img {
+.offcanvas
+  .offcanvas-content
+  .cart-item-container
+  .cart-item
+  .cart-hero
+  .remove-button
+  .remove-button-img {
   cursor: pointer;
   transition: stroke 200ms;
 }
-.offcanvas .offcanvas-content .cart-item-container .cart-item .cart-hero .remove-button .remove-button-img:hover {
+.offcanvas
+  .offcanvas-content
+  .cart-item-container
+  .cart-item
+  .cart-hero
+  .remove-button
+  .remove-button-img:hover {
   stroke: #e90c0c;
 }
-.offcanvas .offcanvas-content .cart-item-container .cart-item .cart-hero .cart-img {
+.offcanvas
+  .offcanvas-content
+  .cart-item-container
+  .cart-item
+  .cart-hero
+  .cart-img {
   width: 10rem;
   margin-inline: 2rem;
 }
@@ -269,4 +286,4 @@ body main > p .collection-name {
   body main {
     margin-top: 6.15rem;
   }
-}/*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map */
